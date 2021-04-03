@@ -23,20 +23,31 @@ namespace Business.Concrete
 
         public IResult Delete(EmptyRoom emptyRoom)
         {
-            throw new NotImplementedException();
+            _emptyRoomDal.Delete(emptyRoom);
+            return new SuccessResult();
         }
 
         public IDataResult<List<EmptyRoom>> GetAll()
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<EmptyRoom>>(_emptyRoomDal.GetAll());
         }
 
-        public IDataResult<List<EmptyRoom>> GetById(int id)
+        public IDataResult<EmptyRoom> GetById(int emptyId)
+        {
+            return new SuccessDataResult<EmptyRoom>(_emptyRoomDal.Get(e => e.Id == emptyId));
+        }
+
+        public IResult Update(EmptyRoom emptyRoom)
         {
             throw new NotImplementedException();
         }
 
-        public IResult Update(EmptyRoom emptyRoom)
+        public void Delete(int v)
+        {
+            
+        }
+
+        public void Delete(string v)
         {
             throw new NotImplementedException();
         }

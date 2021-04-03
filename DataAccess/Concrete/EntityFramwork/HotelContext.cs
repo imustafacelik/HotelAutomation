@@ -15,6 +15,7 @@ namespace DataAccess.Concrete.EntityFramwork
 
         public DbSet<Customer> Customers { get; set; }
         public DbSet<EmptyRoom> EmptyRooms { get; set; }
+        public DbSet<FullRoom>FullRooms { get; set; }
 
 
     }

@@ -20,6 +20,14 @@ namespace FormUI
 
         private void CustomerAddForm_Load(object sender, EventArgs e)
         {
+            EmptyRoomManager emptyRoomManager = new EmptyRoomManager(new EfEmptyRoomDal());
+           
+            foreach (var emptyRooms in emptyRoomManager.GetAll().Data)
+            {
+                comboBox1.Items.Add(emptyRooms.RoomName);
+            }
+
+            
 
         }
 
@@ -38,18 +46,36 @@ namespace FormUI
             CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
 
 
-            Customer customer = new Customer()
+            Customer customer = new Customer
             {
                 FirstName = textBox1.Text,
                 LastName = textBox2.Text,
                 Phone = textBox3.Text,
                 StartDate = dateTimePicker1.Text,
                 EndDate = dateTimePicker2.Text,
-                RoomId = comboBox1.SelectedIndex,
-                RoomDescription = comboBox2.SelectedText
-
-
+                Room = (string)comboBox1.SelectedText
+                
             };
+
+            customerManager.Add(customer);
+
+            EmptyRoomManager emptyRoomManager = new EmptyRoomManager(new EfEmptyRoomDal());
+
+            EmptyRoom emptyRoom = new EmptyRoom();
+
+            string x = Convert.ToString( comboBox1.SelectedIndex);
+            emptyRoomManager.Delete(emptyRoom.RoomName=x);
+
+
+            FullRoomManager fullRoomManager = new FullRoomManager(new EfFullRoomDal());
+
+            FullRoom fullRoom = new FullRoom
+            {
+                RoomName = comboBox1.SelectedText
+            };
+
+
+            fullRoomManager.Add(fullRoom);
 
             
 

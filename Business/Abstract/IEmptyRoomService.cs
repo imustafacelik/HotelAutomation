@@ -9,7 +9,7 @@ namespace Business.Abstract
     public interface IEmptyRoomService
     {
         IDataResult<List<EmptyRoom>> GetAll();
-        IDataResult<List<EmptyRoom>> GetById(int id);
+        IDataResult<EmptyRoom>GetById(int emptyId);
         IResult Add(EmptyRoom emptyRoom);
         IResult Update(EmptyRoom emptyRoom);
         IResult Delete(EmptyRoom emptyRoom);

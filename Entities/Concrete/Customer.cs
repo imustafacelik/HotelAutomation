@@ -13,7 +13,7 @@ namespace Entities.Concrete
         public string Phone { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
-        public int RoomId { get; set; }
-        public string RoomDescription { get; set; }
+        public string Room { get; set; }
+        
     }
 }
