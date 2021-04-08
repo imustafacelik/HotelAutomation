@@ -29,7 +29,6 @@ namespace FormUI
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuForm));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -40,7 +39,7 @@ namespace FormUI
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::FormUI.Properties.Resources.Untitled_1ASDASD;
             this.pictureBox1.Location = new System.Drawing.Point(180, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(400, 160);
@@ -49,7 +48,7 @@ namespace FormUI
             // 
             // button1
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Image = global::FormUI.Properties.Resources.kg2;
             this.button1.Location = new System.Drawing.Point(180, 216);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 105);
@@ -59,7 +58,7 @@ namespace FormUI
             // 
             // button2
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Image = global::FormUI.Properties.Resources.MG15;
             this.button2.Location = new System.Drawing.Point(460, 216);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 105);
@@ -69,7 +68,7 @@ namespace FormUI
             // 
             // button3
             // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Image = global::FormUI.Properties.Resources.OG1;
             this.button3.Location = new System.Drawing.Point(180, 350);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 105);
@@ -79,7 +78,7 @@ namespace FormUI
             // 
             // button4
             // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Image = global::FormUI.Properties.Resources.CK;
             this.button4.Location = new System.Drawing.Point(460, 350);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(120, 105);

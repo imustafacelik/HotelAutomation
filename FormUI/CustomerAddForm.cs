@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -27,6 +28,14 @@ namespace FormUI
                 comboBox1.Items.Add(emptyRooms.RoomName);
             }
 
+            HotelContext db = new HotelContext();
+            dataGridView1.DataSource = db;       
+            dataGridView1.DataSource = db.Customers.ToList();
+
+
+
+            label8.Visible = false;
+         
             
 
         }
@@ -53,30 +62,13 @@ namespace FormUI
                 Phone = textBox3.Text,
                 StartDate = dateTimePicker1.Text,
                 EndDate = dateTimePicker2.Text,
-                Room = (string)comboBox1.SelectedText
+                Room = Convert.ToString(comboBox1.SelectedItem)
                 
             };
 
             customerManager.Add(customer);
 
-            EmptyRoomManager emptyRoomManager = new EmptyRoomManager(new EfEmptyRoomDal());
-
-            EmptyRoom emptyRoom = new EmptyRoom();
-
-            string x = Convert.ToString( comboBox1.SelectedIndex);
-            emptyRoomManager.Delete(emptyRoom.RoomName=x);
-
-
-            FullRoomManager fullRoomManager = new FullRoomManager(new EfFullRoomDal());
-
-            FullRoom fullRoom = new FullRoom
-            {
-                RoomName = comboBox1.SelectedText
-            };
-
-
-            fullRoomManager.Add(fullRoom);
-
+           
             
 
         }
@@ -86,6 +78,34 @@ namespace FormUI
             MenuForm menuForm = new MenuForm();
             menuForm.Show();
             this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (textBox4.Text == "")
+            {
+                label8.Visible = true;
+            }
+            else
+            {
+                HotelContext db = new HotelContext();
+                int x = Convert.ToInt32(textBox4.Text);
+                var customer = db.Customers.Find(x);
+                if (customer != null)
+                {
+                    db.Customers.Remove(customer);
+                }
+                db.SaveChanges();
+                label8.Visible = false;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            HotelContext db = new HotelContext();
+            dataGridView1.DataSource = db;
+            dataGridView1.DataSource = db.Customers.ToList();
+
         }
     }
 }
