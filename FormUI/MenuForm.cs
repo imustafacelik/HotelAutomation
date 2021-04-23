@@ -17,7 +17,16 @@ namespace FormUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (label2.Text == "admin") {
+                EmployeeForm employeeForm = new EmployeeForm();
+                employeeForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Yetkiniz Bulunmamaktadır", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -37,6 +46,12 @@ namespace FormUI
             this.Close();
             Application.Exit();
 
+        }
+
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+            label2.Text = LoginForm.kulad ;
+            label2.ForeColor = Color.Green;
         }
     }
 }

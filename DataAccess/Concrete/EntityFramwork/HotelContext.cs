@@ -16,7 +16,11 @@ namespace DataAccess.Concrete.EntityFramwork
         public DbSet<Customer> Customers { get; set; }
         public DbSet<EmptyRoom> EmptyRooms { get; set; }
         public DbSet<FullRoom>FullRooms { get; set; }
+        public DbSet<Employee>Employees { get; set; }
 
-
+        public object Find(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
