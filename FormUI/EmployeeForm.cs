@@ -26,6 +26,7 @@ namespace FormUI
         }
         private void button1_Click(object sender, EventArgs e)
         {
+
             EmployeeManager employeeManager = new EmployeeManager(new EfEmployeeDal());
             Employee employee = new Employee
             {
@@ -54,6 +55,10 @@ namespace FormUI
 
             dataGridView1.DataSource = db;
             dataGridView1.DataSource = db.Employees.ToList();
+
+            EmptyRoomManager emptyRoomManager = new EmptyRoomManager(new EfEmptyRoomDal());
+
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -94,6 +99,9 @@ namespace FormUI
 
             dataGridView1.DataSource = db;
             dataGridView1.DataSource = db.Employees.ToList();
+
+            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -132,6 +140,24 @@ namespace FormUI
             textBox8.Text= dataGridView1.CurrentRow.Cells[9].Value.ToString();
 
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = db;
+            dataGridView1.DataSource = db.Employees.ToList();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string searchWord = textBox9.Text;
+
+            var results = db.Employees.Where(e => e.FirstName.Contains(searchWord)
+            || e.LastName.Contains(searchWord)
+            || e.Phone.Contains(searchWord)
+            || e.DepartmentName.Contains(searchWord)
+             );
+            dataGridView1.DataSource = results.ToList();
         }
     }
 }

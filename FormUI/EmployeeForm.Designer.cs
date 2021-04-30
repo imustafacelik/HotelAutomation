@@ -249,7 +249,7 @@ namespace FormUI
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(197, 397);
+            this.button3.Location = new System.Drawing.Point(198, 397);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 24;
@@ -265,6 +265,7 @@ namespace FormUI
             this.button4.TabIndex = 25;
             this.button4.Text = "Listele";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox1
             // 
@@ -291,6 +292,7 @@ namespace FormUI
             this.button5.TabIndex = 28;
             this.button5.Text = "Ara";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox2
             // 

@@ -170,9 +170,9 @@ namespace FormUI
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(677, 426);
+            this.button2.Location = new System.Drawing.Point(689, 426);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(63, 23);
             this.button2.TabIndex = 18;
             this.button2.Text = "Geri";
             this.button2.UseVisualStyleBackColor = true;
@@ -207,6 +207,7 @@ namespace FormUI
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(740, 221);
             this.dataGridView1.TabIndex = 28;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // textBox4
             // 
@@ -323,7 +324,6 @@ namespace FormUI
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -336,5 +336,6 @@ namespace FormUI
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button button6;
+        public System.Windows.Forms.ComboBox comboBox1;
     }
 }
