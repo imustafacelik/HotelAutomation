@@ -13,10 +13,9 @@ namespace DataAccess.Concrete.EntityFramwork
             optionsBuilder.UseSqlServer(@"Server = (localdb)\mssqllocaldb; Database=Hotel; Trusted_Connection = true");
         }
 
-        public DbSet<Customer> Customers { get; set; }
-        public DbSet<EmptyRoom> EmptyRooms { get; set; }
-        public DbSet<FullRoom>FullRooms { get; set; }
+        public DbSet<Customer> Customers { get; set; }       
         public DbSet<Employee>Employees { get; set; }
+        public DbSet<Room> Rooms { get; set; }
 
         public object Find(int id)
         {

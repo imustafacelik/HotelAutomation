@@ -21,11 +21,11 @@ namespace FormUI
         HotelContext db = new HotelContext();
         private void CustomerAddForm_Load(object sender, EventArgs e)
         {
-            EmptyRoomManager emptyRoomManager = new EmptyRoomManager(new EfEmptyRoomDal());
+            RoomManager roomManager = new RoomManager(new EfRoomDal());
            
-            foreach (var emptyRooms in emptyRoomManager.GetAll().Data)
+            foreach (var rooms in roomManager.GetAll().Data)
             {
-                comboBox1.Items.Add(emptyRooms.RoomName);
+                comboBox1.Items.Add(rooms.RoomName);
             }
 
             

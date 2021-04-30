@@ -56,7 +56,7 @@ namespace FormUI
             dataGridView1.DataSource = db;
             dataGridView1.DataSource = db.Employees.ToList();
 
-            EmptyRoomManager emptyRoomManager = new EmptyRoomManager(new EfEmptyRoomDal());
+            
 
 
         }
